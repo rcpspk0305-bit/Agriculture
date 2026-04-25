@@ -21,7 +21,7 @@ Open a terminal and navigate to the `backend` directory:
 ```bash
 cd backend
 pip install -r requirements.txt
-uvicorn main:app --reload
+uvicorn app.main:app --reload
 ```
 The FastAPI server will run at `http://localhost:8000`.
 
