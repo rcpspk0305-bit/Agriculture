@@ -6,9 +6,10 @@ latest_iot_data = {
     "P": 50.0,
     "K": 42.0,
     "temperature": 25.5,
-    "humidity": 81.0,
+    "humidity": 40.0,
     "ph": 6.8,
-    "rainfall": 210.0,
+    "rainfall": 50.0,
+    "tds": 150.0,
 }
 
 def on_connect(client, userdata, flags, reason_code, properties=None):
