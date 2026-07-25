@@ -1,5 +1,3 @@
-import cv2
-import numpy as np
 import random
 from app.services.llm_service import client_model
 

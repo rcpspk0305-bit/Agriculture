@@ -58,3 +58,6 @@ lint_out*.json
 .vercel
 *.tsbuildinfo
 next-env.d.ts
+
+# Streamlit
+.streamlit/secrets.toml

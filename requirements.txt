@@ -1,3 +1,4 @@
+streamlit
 fastapi
 uvicorn
 pydantic
@@ -9,3 +10,6 @@ python-multipart
 python-dotenv
 twilio
 pypdf
+plotly
+pandas
+pillow

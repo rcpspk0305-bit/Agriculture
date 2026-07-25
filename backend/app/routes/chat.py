@@ -8,14 +8,26 @@ from app.services.llm_service import generate_action_plan, generate_chat_respons
 
 router = APIRouter()
 
-BASE_DIR = Path(__file__).resolve().parents[1]
+BASE_DIR = Path(__file__).resolve().parents[2]
 RAG_FILE = BASE_DIR / "agriculture-compendium.pdf"
 
 
 def load_rag_text() -> str:
     if not RAG_FILE.exists():
         return ""
-    return RAG_FILE.read_text(encoding="utf-8", errors="ignore")
+    try:
+        import pypdf
+        reader = pypdf.PdfReader(str(RAG_FILE))
+        text = ""
+        for page in reader.pages:
+            t = page.extract_text()
+            if t:
+                text += t + "\n"
+        return text
+    except Exception as e:
+        print(f"Error reading PDF RAG file: {e}")
+        return ""
+
 
 
 def chunk_text(text: str, chunk_size: int = 1200, overlap: int = 200) -> List[str]:
